@@ -7,7 +7,6 @@ import org.junit.Test;
  */
 public class Sum {
 
-    @Test
     public int[] toSum(int[] nums, int target) {
 
         for (int i = 0; i < nums.length; i++) {
@@ -18,5 +17,19 @@ public class Sum {
             }
         }
         return new int[]{};
+    }
+
+    private void printArray(int[] array) {
+        System.out.print("[");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]+" ");
+        }
+        System.out.print("]");
+    }
+    @Test
+    public void test() {
+        Sum sum = new Sum();
+        int[] nums = {2,7,11,15};
+        printArray(sum.toSum(nums,9));
     }
 }
