@@ -1,4 +1,4 @@
-package com.jxs;
+package com.jxs.easy;
 
 import org.junit.Test;
 
