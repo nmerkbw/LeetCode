@@ -7,7 +7,6 @@ import org.junit.Test;
  */
 public class ReverseInteger {
 
-    @Test
     public int reverse(int x) {
 
         //判断x是否在int型范围内
@@ -43,5 +42,11 @@ public class ReverseInteger {
             }
         }
         return 0;
+    }
+
+    @Test
+    public void test() {
+        ReverseInteger r = new ReverseInteger();
+        System.out.println(r.reverse(123));
     }
 }
