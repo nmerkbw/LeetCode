@@ -28,6 +28,6 @@ public class PalindromeNumber {
     @Test
     public void test() {
         PalindromeNumber p = new PalindromeNumber();
-        System.out.println(p.isPalindrome(-10));
+        System.out.println(p.isPalindrome(-12321));
     }
 }
