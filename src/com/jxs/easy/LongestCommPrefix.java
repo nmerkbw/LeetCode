@@ -9,11 +9,15 @@ public class LongestCommPrefix {
 
     public String longestCommonPrefix(String[] strs) {
 
-        System.out.println();
         int length = strs.length;
-        boolean flag = false;
-        String commonPrefix = null;
+        int num = 0;
+        String commonPrefix = "";
         StringBuilder common = new StringBuilder();
+        if (length < 1) {
+            return "";
+        } else if (length == 1) {
+            return strs[0];
+        }
         char[] charStr1 = strs[0].toCharArray();
         char[] charStr2 = strs[1].toCharArray();
         int currLength = 0;
@@ -31,24 +35,35 @@ public class LongestCommPrefix {
                 break;
             }
         }
+        if (length == 2) {
+            return common.toString();
+        }
         for (int i = 2; i < length; i++) {
 
             char[] chars = strs[i].toCharArray();
             char[] commons = common.toString().toCharArray();
-            for (int j = 0; j < commons.length; j++) {
-                if (commons[j] != chars[j]) {
-                    commonPrefix = common.toString().substring(0, j);
-
+            int cLength = 0;
+            if (chars == null) {
+                return "";
+            }
+            if (commons.length <= chars.length) {
+                cLength = commons.length;
+            } else {
+                cLength = chars.length;
+            }
+            for (int j = 0; j < cLength; j++) {
+                if (commons[j] == chars[j]) {
+                    num++;
                 }
             }
         }
-        return commonPrefix;
+        return common.toString().substring(0, num);
     }
 
     @Test
     public void test() {
 
-        String[] strs = {"abcdefg", "abc", "abdc"};
+        String[] strs = {"aac","acab","aa","abba","aa"};
         System.out.println(longestCommonPrefix(strs));
     }
 }
