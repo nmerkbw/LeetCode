@@ -5,9 +5,9 @@ import org.junit.Test;
 /**
  * Created by jiangxs on 2018/3/12.
  */
-public class Sum {
+public class TwoSum {
 
-    public int[] toSum(int[] nums, int target) {
+    public int[] twoSum(int[] nums, int target) {
 
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
@@ -28,8 +28,8 @@ public class Sum {
     }
     @Test
     public void test() {
-        Sum sum = new Sum();
+        TwoSum twoSum = new TwoSum();
         int[] nums = {2,7,11,15};
-        printArray(sum.toSum(nums,9));
+        printArray(twoSum.twoSum(nums,9));
     }
 }
